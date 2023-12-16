@@ -17,8 +17,6 @@ void lcd::lcd_display_string(char* str, int x, int y) {
 }
 
 void lcd::lcd_display_number(float value, int x, int y) {
-   char buffer[10];
-//    dtostrf(myFloat, 5, 2, buffer);
    m_lcd.setCursor(x - 1, y + 1);
    m_lcd.print(value);
 }
