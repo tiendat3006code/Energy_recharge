@@ -16,7 +16,7 @@ public:
     ~lcd();
     void lcd_init();
     void lcd_display_string(char* str, int x, int y);
-    void lcd_display_number(float value, int x, int y);
+    void lcd_display_number(float value_1, float value_2, int posX_1, int posY_1, int posX_2, int posY_2);
     void lcd_display_clear(int start, int end, int x, int y);
     void lcd_display_clear_all();
 };

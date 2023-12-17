@@ -35,7 +35,7 @@ void setup() {
    pinMode(LED_PIN, OUTPUT);
    pinMode(BUTTON_PIN, INPUT_PULLUP);
    pinMode(ROLE_PIN, OUTPUT);
-   digitalWrite(ROLE_PIN, HIGH);
+   digitalWrite(ROLE_PIN, LOW);
    digitalWrite(LED_PIN, LOW);
    load.init();
    lcd1.lcd_init();
@@ -50,27 +50,28 @@ void setup() {
 void loop() {
    //*Chuyen don vi mV thanh V
    float voltage = getVoltage() / 1000.0;
-   lcd1.lcd_display_number(voltage, 10, 2);
+   voltage = voltage * MAX_VOLTAGE / 5.0;
+   // lcd1.lcd_display_number(voltage, 10, 2);
    float weight = load.getWeight() / 1.0;
-   lcd1.lcd_display_number(weight, 10, 1);
+   lcd1.lcd_display_number(weight,voltage, 10, 1, 10, 2);
    Serial.print("Force: ");
    Serial.println(weight);
    if (isOpen) {
       if (millis() - currentTime < TIMEOUT) {
 #ifdef ROLE
-         digitalWrite(ROLE_PIN, LOW);
+         digitalWrite(ROLE_PIN, HIGH);
 #endif
          digitalWrite(LED_PIN, HIGH);
       } else {
 #ifdef ROLE
-         digitalWrite(ROLE_PIN, HIGH);
+         digitalWrite(ROLE_PIN, LOW);
 #endif
          digitalWrite(LED_PIN, LOW);
          isOpen = false;
       }
    } else {
 #ifdef ROLE
-      digitalWrite(ROLE_PIN, HIGH);
+      digitalWrite(ROLE_PIN, LOW);
 #endif
       digitalWrite(LED_PIN, LOW);
       currentTime = millis();

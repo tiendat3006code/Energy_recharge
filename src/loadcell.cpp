@@ -15,7 +15,7 @@ void loadcell::init() {
 long loadcell::getWeight() {
    if (scale.is_ready()) {
       currentResult = scale.get_units(10);
-      return currentResult / 10.0;
+      return currentResult ;
    }
 }
 

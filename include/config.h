@@ -1,7 +1,7 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-// #define ROLE
+#define ROLE
 
 // LCD 16x2
 #define LCD_ADDRESS  0x27
@@ -29,5 +29,8 @@
 
 // TIMEOUT
 #define TIMEOUT      2000
+
+// MAX VOLTAGE
+#define MAX_VOLTAGE  36
 
 #endif  // CONFIG_H
