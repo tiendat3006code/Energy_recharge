@@ -73,7 +73,7 @@ void loop() {
       isOpen = true;
    }
 #ifdef ROLE
-   if ((voltage >= 14.2) && (voltage <= 16.2)) {
+   if ((voltage >= 12.2) && (voltage <= 16.2)) {
       digitalWrite(LED_PIN, HIGH);
    }
    if (digitalRead(LED_PIN) == HIGH)
