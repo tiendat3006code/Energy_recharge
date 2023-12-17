@@ -1,8 +1,8 @@
 #ifndef LCD_H
 #define LCD_H
 
-#include <rgb_lcd.h>
 #include <Wire.h>
+#include <rgb_lcd.h>
 #include "config.h"
 #include "loadcell.h"
 
