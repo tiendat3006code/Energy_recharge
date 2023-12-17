@@ -1,12 +1,12 @@
 #include "../include/lcd.h"
 
-lcd::lcd() : m_lcd(LCD_ADDRESS, 16, 2) {}
+lcd::lcd() {}
 
 lcd::~lcd() {}
 
 void lcd::lcd_init() {
-   m_lcd.init();
-   m_lcd.backlight();
+   m_lcd.begin(16, 2);
+   m_lcd.setRGB(COLOR_R, COLOR_G, COLOR_B);
    m_lcd.setCursor(3, 0);
    m_lcd.print("KHOI DONG");
 }

@@ -4,9 +4,9 @@
 #define ROLE
 
 // LCD 16x2
-#define LCD_ADDRESS  0x27
-#define SDA          A4
-#define SCL          A5
+#define COLOR_R      255
+#define COLOR_G      0
+#define COLOR_B      0
 
 // CHAN INPUT CUA HX711
 #define DT_PIN       4
@@ -31,6 +31,6 @@
 #define TIMEOUT      2000
 
 // MAX VOLTAGE
-#define MAX_VOLTAGE  36
+#define MAX_VOLTAGE  16
 
 #endif  // CONFIG_H
